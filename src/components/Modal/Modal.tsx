@@ -1,3 +1,5 @@
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
 type Props = {
   imageUrl: string;
   onClose: () => void;
@@ -6,10 +8,10 @@ type Props = {
 const Modal = ({ imageUrl, onClose }: Props) => {
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  "
       onClick={() => onClose()}
     >
-      <div className="bg-white p-4 rounded-lg">
+      <div className="bg-white p-10 rounded-lg relative">
         <img
           src={imageUrl}
           alt="Large view"
@@ -17,9 +19,9 @@ const Modal = ({ imageUrl, onClose }: Props) => {
         />
         <button
           onClick={onClose}
-          className="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+          className=" bg-transparent text-white  rounded absolute top-2 right-2"
         >
-          Close
+          <IoMdCloseCircleOutline color="red" className="text-4xl" />
         </button>
       </div>
     </div>
